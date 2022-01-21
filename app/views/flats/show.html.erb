@@ -1,0 +1,26 @@
+<div class="flat-container-content">
+  <div class="flat-basic">
+    <h1><%= @flat.name %></h1>
+    <p><%= @flat.address %></p>
+  </div>
+  <br>
+  <div class="flat-more">
+    <h2>A bit more about us......</h2>
+    <p><%= @flat.description %></p>
+  </div>
+  <br>
+  <div class="flat-details">
+    <h2>Details</h2>
+      <div class="flex">
+        <i class="fas fa-euro-sign"></i><p><%= @flat.price_per_night %></p>
+      </div>
+      <div class="flex">
+        <i class="fas fa-user-friends"></i>  <p>guests: <%= @flat.number_of_guests %></p>
+      </div>
+  </div>
+  <div class="flat-action">
+    <%= link_to "Back to flat list", flats_path %>
+    <%= link_to "Edit", edit_flat_path(@flat), class: 'ml-3 text-warning' %>
+    <%= link_to "Remove", flat_path(@flat), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ml-3 text-danger' %>
+  </div>
+</div>
